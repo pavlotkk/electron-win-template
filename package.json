@@ -4,14 +4,16 @@
   "description": "Demo electron app",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-dev": "webpack --config webpack.dev.js",
+    "webpack-prod": "webpack --config webpack.prod.js",
 
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --windows --ia32"
+    "electron-dev": "electron ./.webpack/main.js",
+    "electron-pack": "electron-builder --dir",
+    "electron-build": "electron-builder --windows --ia32"
   },
   "build": {
-    "appId": "electrong.win.template",
+    "appId": "CompanyName.ProductName.Version",
+    "productName": "Electron Win App",
     "win": {
       "target": "nsis",
       "icon": "build/icon",
@@ -22,7 +24,19 @@
   "author": "Pavlo Tkachuk",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^12.0.6",
-    "electron-builder": "^22.11.1"
-  }
+    "bootstrap": "^5.0.0",
+    "css-loader": "^5.2.4",
+    "electron": "^12.0.7",
+    "electron-builder": "^22.11.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {}
 }
